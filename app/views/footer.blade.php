@@ -1,7 +1,3 @@
-<?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
+<div class="footer">
+    <h3>This is the foot bro</h3>
+</div>
