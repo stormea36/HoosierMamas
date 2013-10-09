@@ -15,9 +15,21 @@ class PlayerController extends BaseController {
 	|
 	*/
 
-	public function newPlayer()
+	public function newPlayerForm()
 	{
-		return View::make('player.newPlayer');
+		return View::make('player.newPlayer')->with('message',Session::get('message',false));
 	}
+        public function newPlayer()
+        {
+                $player = new Player();
+                $player->username = Input::get('username');
+                $player->first = Input::get('firstname');
+                $player->last = Input::get('lastname');
+                $player->email = Input::get('email');
+                $player->save();
+                
+                Session::flash('message', 'User Created');
+                return Redirect::route('player.form')->with('message',Session::get('message',false));
+        }
 
 }

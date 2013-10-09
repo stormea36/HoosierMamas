@@ -20,4 +20,6 @@ Route::get('index', function() {
     return View::make("index");
 });
 
-Route::get('player/new', 'PlayerController@newPlayer');
+Route::get('player/new', array('as' => 'player.form', 'uses' => 'PlayerController@newPlayerForm'));
+
+Route::post('player/create', array('as' => 'player.create', 'uses' => 'PlayerController@newPlayer'));
