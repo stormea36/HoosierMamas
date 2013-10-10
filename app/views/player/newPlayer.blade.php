@@ -32,7 +32,39 @@
                 </div> <!-- /controls -->
                 <td class="status"></td>
             </div> <!-- /control-group -->
+            
+            <div class="control-group">											
+                <label class="control-label" for="username">Password</label>
+                <div class="controls">
+                    {{ Form::password('password') }}
+                </div> <!-- /controls -->
+                <td class="status"></td>
+            </div> <!-- /control-group -->
+            
+            <div class="control-group">											
+                <label class="control-label" for="username">Confirm Password</label>
+                <div class="controls">
+                    {{ Form::password('passcheck') }}
+                </div> <!-- /controls -->
+                <td class="status"></td>
+            </div> <!-- /control-group -->
 
+            <div class="control-group">											
+                <label class="control-label" for="email">USAU Account</label>
+                <div class="controls">
+                    {{ Form::text('usauacct') }}
+                </div> <!-- /controls -->
+                <td class="status"></td>
+            </div> <!-- /control-group -->
+            
+            <div class="control-group">											
+                <label class="control-label" for="email">Exp Date</label>
+                <div class="controls">
+                    {{ Form::text('usauexp') }}
+                </div> <!-- /controls -->
+                <td class="status"></td>
+            </div> <!-- /control-group -->
+            
             <div class="control-group">											
                 <label class="control-label" for="email">Email Address</label>
                 <div class="controls">
@@ -40,7 +72,7 @@
                 </div> <!-- /controls -->
                 <td class="status"></td>
             </div> <!-- /control-group -->
-
+            
             <br />
 
 
