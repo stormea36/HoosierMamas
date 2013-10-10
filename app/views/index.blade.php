@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content') 
+<div class='container'>
+    
 <div class="hero">
     <div class="hero_brand">
         <h3>HoosierMama?s</h3>
@@ -19,5 +21,9 @@
     </div>
 
 </div>
+</div>    
+    
+    
 </div>
+
 @stop

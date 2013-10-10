@@ -17,8 +17,7 @@ Route::get('/', function()
 });
 
 Route::get('index', function() {
-            phpinfo();
-            exit;
+            
     return View::make("index");
 });
 
