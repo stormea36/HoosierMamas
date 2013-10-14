@@ -3,9 +3,9 @@
 <div class='container'>
     <div class="row">
         @if($message)
-            <div id='message'>{{$message}}</div>
-            @endif   
-        
+        <div id='message'>{{$message}}</div>
+        @endif   
+
         {{ Form::open(array('route' => 'player.create', 'id' => 'signupform')) }}
 
         <fieldset>
@@ -32,7 +32,7 @@
                 </div> <!-- /controls -->
                 <td class="status"></td>
             </div> <!-- /control-group -->
-            
+
             <div class="control-group">											
                 <label class="control-label" for="username">Password</label>
                 <div class="controls">
@@ -40,7 +40,7 @@
                 </div> <!-- /controls -->
                 <td class="status"></td>
             </div> <!-- /control-group -->
-            
+
             <div class="control-group">											
                 <label class="control-label" for="username">Confirm Password</label>
                 <div class="controls">
@@ -56,15 +56,15 @@
                 </div> <!-- /controls -->
                 <td class="status"></td>
             </div> <!-- /control-group -->
-            
+
             <div class="control-group">											
-                <label class="control-label" for="email">Exp Date</label>
+                <label class="control-label" for="datepicker">Exp Date:</label>
                 <div class="controls">
-                    {{ Form::text('usauexp') }}
+                    {{ Form::text('usauexp', null, array('id' => 'datepicker')) }}
                 </div> <!-- /controls -->
-                <td class="status"></td>
-            </div> <!-- /control-group -->
-            
+                <div class="status"></div>
+            </div> <!-- /date -->
+
             <div class="control-group">											
                 <label class="control-label" for="email">Email Address</label>
                 <div class="controls">
@@ -72,7 +72,7 @@
                 </div> <!-- /controls -->
                 <td class="status"></td>
             </div> <!-- /control-group -->
-            
+
             <br />
 
 
@@ -86,4 +86,10 @@
     </div>
 
 </div>
+    
+<script>
+    $(function() {
+    $("#datepicker").datepicker();
+  });
+</script>
 @stop

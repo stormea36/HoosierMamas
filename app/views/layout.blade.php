@@ -8,6 +8,9 @@
     <link type="text/css" rel="stylesheet" href="/css/mystyles.css" />
     <link type="text/css" rel="stylesheet" href="/css/bootstrap.css" />
     <link href='http://fonts.googleapis.com/css?family=Headland+One|Belleza' rel='stylesheet' type='text/css'>
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type='text/css'>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/myscript.js"></script>
     <style>
         body { padding-top: 70px;
 font-family: 'Belleza', sans-serif;
@@ -33,9 +36,9 @@ font-family: 'Belleza', sans-serif;
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
-  <script src="/js/bootstrap.js"></script>
-    <script src="/js/myscript.js"></script>
+ 
+  
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
   </body>
 </html>
