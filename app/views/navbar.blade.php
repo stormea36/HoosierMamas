@@ -15,15 +15,13 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
       
-      <li><a href="{{URL::to('player/new')}}">Player</a></li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Players<b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li><a href="#">Separated link</a></li>
-          <li><a href="#">One more separated link</a></li>
+          <li><a href="{{URL::to('player')}}">Player List</a></li>
+          <li><a href="{{URL::to('player/new')}}">New Player</a></li>
+          <li><a href="#">New Transaction</a></li>
+          
         </ul>
       </li>
     </ul>

@@ -11,16 +11,34 @@
 |
 */
 
+
+/*
+ * Loads the landing page
+ */
 Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+/*
+ * Route Models
+ * These routes are used to access and update data models
+ */
+Route::model('player', 'Player');
+Route::model('transaction', 'Transaction');
+
 
 Route::get('index', function() {
             
     return View::make("index");
 });
 
+Route::get('player', array('as' => 'player.main', 'uses' => 'PlayerController@playerMain'));
+
 Route::get('player/new', array('as' => 'player.form', 'uses' => 'PlayerController@newPlayerForm'));
 
 Route::post('player/create', array('as' => 'player.create', 'uses' => 'PlayerController@newPlayer'));
+
+Route::get('player/login', 'PlayerController@login');
+
+Route::post('login', array('as' => 'player.login', 'uses' => 'PlayerController@validate'));
