@@ -6,7 +6,11 @@
         <h1>
             HoosierMama's Player Dashboard
         </h1>
+        @if(Auth::check())
+    <h3>Logged in/h3>
+    @endif
     </div>
+    
     <hr>
     <div class='row'>
         <div class='col-lg-3'>

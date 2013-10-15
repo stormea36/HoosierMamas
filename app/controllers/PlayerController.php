@@ -15,6 +15,9 @@ class PlayerController extends BaseController {
      */
 
     public function playerMain() {
+        if (Auth::check()) {
+            return Redirect::to('player/login');
+        }
         return View::make('player.playerMain');
     }
 
