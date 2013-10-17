@@ -10,4 +10,10 @@ class PlayerService {
         
         return 0;
     }
+    
+    public static function playerList() {
+        $players = Player::all();
+        return $players;
+    }
+    
 }

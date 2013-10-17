@@ -11,6 +11,7 @@
     <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type='text/css'>
     <script src="/js/bootstrap.js"></script>
     <script src="/js/myscript.js"></script>
+    <script src="/js/typeahead.js"></script>
     <style>
         body { padding-top: 70px;
 font-family: 'Belleza', sans-serif;

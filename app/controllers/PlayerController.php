@@ -15,10 +15,14 @@ class PlayerController extends BaseController {
      */
 
     public function playerMain() {
-        if (Auth::check()) {
-            return Redirect::to('player/login');
+        $player = PlayerService::playerList();
+        $username = DB::table('players')->lists('username');
+        
+        if (Auth::check()) { //the user is logged in
+           return View::make('player.playerMain')->with('player',$player)->with('username',$username); 
         }
-        return View::make('player.playerMain');
+        //the user is not logged in
+        return Redirect::to('player/login');
     }
 
     public function newPlayerForm() {
@@ -41,7 +45,7 @@ class PlayerController extends BaseController {
         );
         if (Auth::attempt($login)) {
             Session::put('user', Auth::user($login));
-            return Redirect::intended('player.dash');
+            return Redirect::intended('player');
             //implement flash line
         }
         return Redirect::route('player.login')->with('flash_error', 'Your username/password combination was incorrect.')->withInput();
