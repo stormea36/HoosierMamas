@@ -3,7 +3,7 @@
 <script>
 $(function() {
    var players = [
-       @foreach($username as $user)"{{$user}}",@endforeach] 
+       @foreach($username as $user)"{{$user->first}} {{$user->last}}",@endforeach] 
    $( "#tags" ).autocomplete({
       source: players
     });

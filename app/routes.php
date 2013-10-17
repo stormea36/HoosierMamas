@@ -42,3 +42,9 @@ Route::post('player/create', array('as' => 'player.create', 'uses' => 'PlayerCon
 Route::get('player/login', 'PlayerController@login');
 
 Route::post('login', array('as' => 'player.login', 'uses' => 'PlayerController@validate'));
+
+Route::get('admin', array('as' => 'admin', 'uses' => 'AdminController@adminMain'));
+
+Route::get('admin/transaction', 'AdminController@transaction');
+
+Route::post('trans', array('as' => 'admin.trans', 'uses' => 'AdminController@newTransaction'));

@@ -16,10 +16,9 @@ class PlayerController extends BaseController {
 
     public function playerMain() {
         $player = PlayerService::playerList();
-        $username = DB::table('players')->lists('username');
         
         if (Auth::check()) { //the user is logged in
-           return View::make('player.playerMain')->with('player',$player)->with('username',$username); 
+           return View::make('player.playerMain')->with('player',$player); 
         }
         //the user is not logged in
         return Redirect::to('player/login');
