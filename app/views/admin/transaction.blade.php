@@ -3,8 +3,8 @@
 <script>
 $(function() {
    var players = [
-       @foreach($username as $user)"{{$user->first}} {{$user->last}}",@endforeach] 
-   $( "#tags" ).autocomplete({
+       @foreach($username as $user)"{{$user->name}}",@endforeach] 
+   $( "#user" ).autocomplete({
       source: players
     });
 });
@@ -23,30 +23,65 @@ $(function() {
     <div class='row'>
         <div class='col-lg-3'>
             <ul class="nav nav-pills nav-stacked">
-  <li><a href="#">All</a></li>
-  <li class='active'><a href="#">Mama?s</a></li>
-  <li><a href="#">Daddy?s</a></li>
+  <li><a href="#">All Transactions</a></li>
+  <li class='active'><a href="#">New Transaction</a></li>
+  <li><a href="#">Late Payees</a></li>
 </ul>
         </div>
         
         <div class='col-lg-9'>
             <h2>Hello World</h2>
+            @if($message)
+            <div id='message'>{{$message}}</div>
+            @endif
             
             
             {{ Form::open(array('route' => 'admin.trans', 'id' => 'transaction')) }}
             
             <div class="control-group">											
-                <label class="control-label" for="datepicker">Player</label>
+                <label class="control-label" for="user">User's Name</label>
                 <div class="controls">
-            <input type="text" id="tags">
+            {{ Form::text('user', null, array('id' => 'user')) }}
+                </div>
+            </div>
+            
+            <div class="control-group">											
+                <label class="control-label" for="amount">Amount</label>
+                <div class="controls">
+            {{ Form::text('amount') }}
+                </div>
+            </div>
+            
+            <div class="control-group">											
+                <label class="control-label" for="amount">Transaction Type:</label>
+                <div class="controls">
+            {{ Form::select('size', 
+                array('dues' => 'dues', 'tournament' => 'tournament', 'fronted' => 'fronted', 'past' => 'past owed')) }}
+                </div>
+            </div>
             
             <div class="control-group">											
                 <label class="control-label" for="datepicker">Transaction Date</label>
                 <div class="controls">
-                    {{ Form::text('usauexp', null, array('id' => 'datepicker')) }}
+                    {{ Form::text('date', null, array('id' => 'datepicker')) }}
                 </div> <!-- /controls -->
                 <div class="status"></div>
             </div> <!-- /date -->
+            
+            
+             <div class="control-group">											
+                <label class="control-label" for="incExp"></label>
+                <div class="controls">
+            Income {{ Form::radio('inc_exp','1') }}
+            Expense {{ Form::radio('inc_exp','0') }}
+                </div>
+            </div>
+            <br>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit Transaction</button> 
+                <button class="btn">Cancel</button>
+            </div> <!-- /form-actions -->
             
             {{ Form::close() }}
         </div>

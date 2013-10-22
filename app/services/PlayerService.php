@@ -3,7 +3,7 @@
 class PlayerService {
     
     public static function updatePlayer() {
-        $username = DB::table('players')->select('username')->where('username', Input::get('username'))->get();
+        $username = DB::table('users')->select('username')->where('username', Input::get('username'))->get();
         if($username) { //if username exists
             return 1;
         }
@@ -12,7 +12,8 @@ class PlayerService {
     }
     
     public static function playerList() {
-        $players = Player::all();
+        $players = User::where('user_type','player')->get();
+        
         return $players;
     }
     

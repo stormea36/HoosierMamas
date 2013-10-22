@@ -10,19 +10,11 @@
 
         <fieldset>
             <div class="control-group">											
-                <label class="control-label" for="firstname">First name</label>
+                <label class="control-label" for="name">Name</label>
                 <div class="controls">
-                    {{ Form::text('firstname') }}
+                    {{ Form::text('name') }}
                 </div> <!-- /controls -->
                 <td class="status"></td>
-            </div> <!-- /control-group -->
-
-            <div class="control-group">											
-                <label class="control-label" for="lastname">Last name</label>
-                <div class="controls">
-                    {{ Form::text('lastname') }}
-                </div> <!-- /controls -->
-                <div class="status"></div>
             </div> <!-- /control-group -->
 
             <div class="control-group">											
@@ -50,22 +42,6 @@
             </div> <!-- /control-group -->
 
             <div class="control-group">											
-                <label class="control-label" for="email">USAU Account</label>
-                <div class="controls">
-                    {{ Form::text('usauacct') }}
-                </div> <!-- /controls -->
-                <td class="status"></td>
-            </div> <!-- /control-group -->
-
-            <div class="control-group">											
-                <label class="control-label" for="datepicker">Exp Date:</label>
-                <div class="controls">
-                    {{ Form::text('usauexp', null, array('id' => 'datepicker')) }}
-                </div> <!-- /controls -->
-                <div class="status"></div>
-            </div> <!-- /date -->
-
-            <div class="control-group">											
                 <label class="control-label" for="email">Email Address</label>
                 <div class="controls">
                     {{ Form::text('email') }}
@@ -86,10 +62,5 @@
     </div>
 
 </div>
-    
-<script>
-    $(function() {
-    $("#datepicker").datepicker();
-  });
-</script>
+
 @stop

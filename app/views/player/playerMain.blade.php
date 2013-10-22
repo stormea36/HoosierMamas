@@ -21,7 +21,6 @@ $(function() {
     
     <hr>
     <div class='row'>
-        <input type="text" id="tags">
         <div class='col-lg-3'>
             <ul class="nav nav-pills nav-stacked">
   <li><a href="#">All</a></li>
@@ -35,8 +34,7 @@ $(function() {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Name</th>
                         <th>Username</th>
                         
                     </tr>
@@ -45,9 +43,8 @@ $(function() {
                    @foreach($player as $player)
                    <tr>
                        <td>{{ $player->id }}</td>
-                       <td>{{ $player->first }}</td>
-                       <td>{{ $player->last }}</td>
-                       <td>{{ $player->username }}</td>
+                       <td>{{ $player->name }}</td>
+                       <td>{{ $player->balance }}</td>
                    </tr>
                    @endforeach
                 </tbody>
@@ -57,7 +54,4 @@ $(function() {
     </div>
 
 </div>
-<script>
-$('.typeahead').typeahead()
-</script>
 @stop

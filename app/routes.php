@@ -25,6 +25,7 @@ Route::get('/', function()
  * These routes are used to access and update data models
  */
 Route::model('player', 'Player');
+Route::model('user', 'User');
 Route::model('transaction', 'Transaction');
 
 
@@ -45,6 +46,6 @@ Route::post('login', array('as' => 'player.login', 'uses' => 'PlayerController@v
 
 Route::get('admin', array('as' => 'admin', 'uses' => 'AdminController@adminMain'));
 
-Route::get('admin/transaction', 'AdminController@transaction');
+Route::get('admin/transaction', array('as' => 'new.trans', 'uses' => 'AdminController@transaction'));
 
-Route::post('trans', array('as' => 'admin.trans', 'uses' => 'AdminController@newTransaction'));
+Route::post('trans', array('as' => 'admin.trans', 'uses' => 'AdminController@newTrans'));

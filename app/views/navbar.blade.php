@@ -20,7 +20,7 @@
         <ul class="dropdown-menu">
           <li><a href="{{URL::to('player')}}">Player List</a></li>
           <li><a href="{{URL::to('player/new')}}">New Player</a></li>
-          <li><a href="#">New Transaction</a></li>
+          <li><a href="{{URL::to('admin/transaction')}}">Transactions</a></li>
           
         </ul>
       </li>

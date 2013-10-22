@@ -16,11 +16,8 @@ class PlayerController extends BaseController {
 
     public function playerMain() {
         $player = PlayerService::playerList();
-        if (Auth::check()) { //the user is logged in
            return View::make('player.playerMain')->with('player',$player); 
-        }
-        //the user is not logged in
-        return Redirect::to('player/login');
+        
     }
 
     public function newPlayerForm() {
@@ -53,14 +50,12 @@ class PlayerController extends BaseController {
         $pass = Input::get('password');
         $check = Input::get('passcheck');
         if ($pass == $check) { //Password and passcheck match
-            $player = new Player();
+            $player = new User();
             $player->username = Input::get('username');
-            $player->first = Input::get('firstname');
-            $player->last = Input::get('lastname');
+            $player->name = Input::get('name');
+            $player->user_type = 'player';
             $player->email = Input::get('email');
             $player->password = Hash::make($pass);
-            $player->usauaccount = Input::get('usauacct');
-            $player->usauexpdate = Input::get('usauexpdate');
             $player->save();
 
             Session::flash('message', 'User Created');
