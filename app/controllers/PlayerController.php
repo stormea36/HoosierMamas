@@ -16,7 +16,6 @@ class PlayerController extends BaseController {
 
     public function playerMain() {
         $player = PlayerService::playerList();
-        
         if (Auth::check()) { //the user is logged in
            return View::make('player.playerMain')->with('player',$player); 
         }
