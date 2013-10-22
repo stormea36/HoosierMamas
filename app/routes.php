@@ -49,3 +49,13 @@ Route::get('admin', array('as' => 'admin', 'uses' => 'AdminController@adminMain'
 Route::get('admin/transaction', array('as' => 'new.trans', 'uses' => 'AdminController@transaction'));
 
 Route::post('trans', array('as' => 'admin.trans', 'uses' => 'AdminController@newTrans'));
+
+Route::get('admin/transaction/all', array('as' => 'all.trans', 'uses' => 'AdminController@allTrans'));
+
+Route::get('admin/transaction/due', array('as' => 'due.trans', 'uses' => 'AdminController@dueTrans'));
+    //will collect all names that haven't paid
+/*
+ * For data analysis, let's create a control that generates the new round of dues.
+ * use this to add a balance to all 'player' type users.
+ * balance --> is generated and updated from dashboard
+ */

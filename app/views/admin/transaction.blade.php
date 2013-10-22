@@ -55,8 +55,7 @@ $(function() {
             <div class="control-group">											
                 <label class="control-label" for="amount">Transaction Type:</label>
                 <div class="controls">
-            {{ Form::select('type', 
-                array('dues' => 'dues', 'tournament' => 'tournament', 'fronted' => 'fronted', 'past' => 'past owed')) }}
+            {{ Form::select('type', array('dues' => 'dues', 'tournament' => 'tournament', 'fronted' => 'fronted', 'past' => 'past owed')) }}
                 </div>
             </div>
             
