@@ -12,7 +12,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
         
-        public function transaction()
+        public function transactions()
          {
              return $this->hasMany('Transaction');
          }

@@ -84,6 +84,31 @@ $(function() {
             
             {{ Form::close() }}
         </div>
+        
+        <div class='col-lg-9'>
+            <table class='table'>
+                <thead>
+                    <tr>
+                        <th>Transaction Date</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                   @foreach($trans as $tran)
+                   <tr>
+                       <td>{{ $tran->date }}</td>
+                       <td>{{ $tran->user->name }}</td>
+                       <td>{{ $tran->amount }}</td>
+                       
+                       
+                   </tr>
+                   @endforeach
+                </tbody>
+                
+            </table>
+        </div>
     </div>
 
 </div>

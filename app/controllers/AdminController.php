@@ -8,8 +8,8 @@ class AdminController extends BaseController {
     public function transaction() {
         
         $username = User::all();
-        
-        return View::make('admin.transaction')->with('username',$username)->with('message', Session::get('message', false));;
+        $transactions = Transaction::where('trans_type','dues')->get();
+        return View::make('admin.transaction')->with('username',$username)->with('trans',$transactions)->with('message', Session::get('message', false));;
     }
     public function newTrans() {
         $user = User::where('name',Input::get('user'))->get();
